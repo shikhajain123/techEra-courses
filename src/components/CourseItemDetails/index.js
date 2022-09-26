@@ -52,12 +52,58 @@ class CourseItemDetails extends Component {
   }
 
   loadingView = () => (
-    <div className="loader-container" /* testid="loader" */>
+    <div className="loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#00BFFF" height={50} width={50} />
     </div>
   )
 
-  successView = () => {}
+  successView = () => {
+    const {courseDetailsData} = this.state
+    return (
+      <div className="course-details-container">
+        <img
+          src={courseDetailsData.imageUrl}
+          alt={courseDetailsData.name}
+          className="course-image"
+        />
+        <div>
+          <h1 className="heading">{courseDetailsData.name}</h1>
+          <p className="description">{courseDetailsData.description}</p>
+        </div>
+      </div>
+    )
+  }
+
+  failView = () => (
+    <div>
+      <Link to="/">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/tech-era/website-logo-img.png"
+          alt="website logo"
+          className="logo"
+        />
+      </Link>
+      <div className="failure-view-container">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png"
+          alt="failure view"
+          className="fail-image"
+        />
+        <h1 className="failure-heading">Oops! Something Went Wrong</h1>
+
+        <p className="para">
+          We cannot seem to find the page you are looking for
+        </p>
+        <button
+          type="button"
+          onClick={this.getCourseDataDetails}
+          className="retry-btn"
+        >
+          Retry
+        </button>
+      </div>
+    </div>
+  )
 
   finalRender = () => {
     const {api} = this.state
@@ -86,7 +132,7 @@ class CourseItemDetails extends Component {
           </nav>
         </Link>
 
-        <div>{this.finalRender()}</div>
+        <div className="course-view-container">{this.finalRender()}</div>
       </div>
     )
   }

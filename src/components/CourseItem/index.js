@@ -104,7 +104,7 @@ class CourseItem extends Component {
   )
 
   renderLoader = () => (
-    <div className="loader=container" /* testid="loader" */>
+    <div className="loader=container" data-testid="loader">
       <Loader type="ThreeDots" width={50} height={50} color="#00BFFF" />
     </div>
   )

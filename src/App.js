@@ -10,8 +10,8 @@ import './App.css'
 const App = () => (
   <div>
     <Switch>
-      <Route path="/" component={CourseItem} />
-      <Route path="/courses/:id" component={CourseItemDetails} />
+      <Route exact path="/" component={CourseItem} />
+      <Route exact path="/courses/:id" component={CourseItemDetails} />
       <Route component={NotFound} />
     </Switch>
   </div>

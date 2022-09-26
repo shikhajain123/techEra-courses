@@ -1,0 +1,10 @@
+.nav-container {
+  background-color: #f1f5f9;
+  padding: 20px;
+  min-height: 10vh;
+  width: 100%;
+}
+
+.logo {
+  width: 70px;
+}

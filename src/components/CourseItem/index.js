@@ -35,7 +35,7 @@ class CourseItem extends Component {
     const response = await fetch(apiUrl, option)
     if (response.ok === true) {
       const data = await response.json()
-      console.log()
+
       const formattedData = data.courses.map(eachCourse => ({
         id: eachCourse.id,
         logoUrl: eachCourse.logo_url,
@@ -125,7 +125,7 @@ class CourseItem extends Component {
 
   render() {
     const {courseData, apiStat} = this.state
-    console.log(courseData)
+
     return (
       <div className="app-container">
         <div className="responsive">
